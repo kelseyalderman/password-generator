@@ -32,31 +32,32 @@ function generatePassword() {
     if (!lowerCase && !upperCase && !special && !numbers) {
       alert("Invalid input. Please select at least one character type");
       console.log("Invalid input. No character type selected.");
-    }
+      return "Please try again";
+    } else {
+      // Get characters for password
+      if (lowerCase) {
+        chosenCharacters += lowerCaseCharacters;
+      }
+      if (upperCase) {
+        chosenCharacters += upperCaseCharacters;
+      }
+      if (special) {
+        chosenCharacters += specialCharacters;
+      }
+      if (numbers) {
+        chosenCharacters += numberCharacters;
+      }
 
-    // Get characters for password
-    if (lowerCase) {
-      chosenCharacters += lowerCaseCharacters;
-    }
-    if (upperCase) {
-      chosenCharacters += upperCaseCharacters;
-    }
-    if (special) {
-      chosenCharacters += specialCharacters;
-    }
-    if (numbers) {
-      chosenCharacters += numberCharacters;
-    }
+      // Generate password with chosen characters
+      for (var i = 0; i < length; i++) {
+        result += chosenCharacters.charAt(
+          Math.floor(Math.random() * chosenCharacters.length)
+        );
+      }
 
-    // Generate password with chosen characters
-    for (var i = 0; i < length; i++) {
-      result += chosenCharacters.charAt(
-        Math.floor(Math.random() * chosenCharacters.length)
-      );
+      // Display password to the page
+      return result;
     }
-
-    // Display password to the page
-    return result;
 
     // Alert if length requirement is not met
   } else {
