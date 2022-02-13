@@ -12,6 +12,8 @@ An application to randomly generate passwords that meet certain criteria.
 
 ## Website
 
+https://kelseyalderman.github.io/password-generator/
+
 ## Preview
 
 ![Screenshot of Password Generator](password-generator.jpg)
