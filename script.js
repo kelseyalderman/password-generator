@@ -8,6 +8,8 @@ var result = "";
 
 // Function to generate password
 function generatePassword() {
+  // Replace textbox input with generated password
+  var result = "";
   // Prompt user for password length
   var length = prompt(
     "How many characters would you like your password to contain? Please pick a number between 8 and 128."
@@ -33,31 +35,31 @@ function generatePassword() {
       alert("Invalid input. Please select at least one character type");
       console.log("Invalid input. No character type selected.");
       return "Please try again";
-    } else {
-      // Get characters for password
-      if (lowerCase) {
-        chosenCharacters += lowerCaseCharacters;
-      }
-      if (upperCase) {
-        chosenCharacters += upperCaseCharacters;
-      }
-      if (special) {
-        chosenCharacters += specialCharacters;
-      }
-      if (numbers) {
-        chosenCharacters += numberCharacters;
-      }
-
-      // Generate password with chosen characters
-      for (var i = 0; i < length; i++) {
-        result += chosenCharacters.charAt(
-          Math.floor(Math.random() * chosenCharacters.length)
-        );
-      }
-
-      // Display password to the page
-      return result;
     }
+
+    // Get characters for password
+    if (lowerCase) {
+      chosenCharacters += lowerCaseCharacters;
+    }
+    if (upperCase) {
+      chosenCharacters += upperCaseCharacters;
+    }
+    if (special) {
+      chosenCharacters += specialCharacters;
+    }
+    if (numbers) {
+      chosenCharacters += numberCharacters;
+    }
+
+    // Generate password with chosen characters
+    for (var i = 0; i < length; i++) {
+      result += chosenCharacters.charAt(
+        Math.floor(Math.random() * chosenCharacters.length)
+      );
+    }
+
+    // Display password to the page
+    return result;
 
     // Alert if length requirement is not met
   } else {
