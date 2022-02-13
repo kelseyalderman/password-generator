@@ -8,7 +8,7 @@ var result = "";
 
 // Function to generate password
 function generatePassword() {
-  // Replace textbox input with generated password
+  // Replace text input with final password
   var result = "";
   // Prompt user for password length
   var length = prompt(
@@ -65,12 +65,9 @@ function generatePassword() {
   } else {
     alert("Invalid input. Please enter a number between 8 and 128.");
     console.log("Invalid length.");
-    return "Please Try Again";
+    return "Please try again";
   }
 }
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -79,6 +76,9 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
